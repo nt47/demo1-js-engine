@@ -1,0 +1,95 @@
+#pragma once
+#include"event_base.h"
+#include"animal.h"
+#include"v8.h"
+#include"v8pp/class.hpp"
+#include"js_state.h"
+class PaintHookManager : public HookManager {
+public:
+	static PaintHookManager& GetInstance() {
+		static PaintHookManager instance;
+		return instance;
+	}
+
+
+	void Create() {
+		if (!hook_.Hooked())
+			hook_.Rehook();
+
+		hook_.HookMethod(CHudHealthBars_Paint, 3);
+	}
+
+	void Destory() {
+		hook_.Unhook();
+	}
+
+private:
+	PaintHookManager()
+		: HookManager(g_animal, 0) {
+	}
+
+
+	static const char* __fastcall CHudHealthBars_Paint(
+		void* thisptr, int number)
+	{
+		using OriginalFn = const char* (__fastcall*)(void*, int);
+		auto& mgr = PaintHookManager::GetInstance();
+
+		mgr.CallListener();
+
+		// 调用原函数
+		return mgr.hook_.GetMethod<OriginalFn>(3)(thisptr, 6);
+	}
+};
+
+
+class PaintHookListener : public HookListener {
+public:
+	explicit PaintHookListener(const v8::FunctionCallbackInfo<v8::Value>& args) :isolate_(args.GetIsolate())
+	{
+		if (!args[0]->IsFunction()) return;
+
+
+		callback_.Reset(isolate_, args[0].As<v8::Function>());
+
+		PaintHookManager::GetInstance().Create();
+		PaintHookManager::GetInstance().AddListener(this);
+	}
+
+	~PaintHookListener() {
+		callback_.Reset();
+		PaintHookManager::GetInstance().RemoveListener(this);
+		PaintHookManager::GetInstance().Destory();
+	}
+
+	void NewEvent() override {
+		// 调用 JS 监听器
+
+		v8::Isolate::Scope isolate_scope(isolate_);//多线程必须开启，相当于isolate->Enter()
+		v8::HandleScope handle_scope(isolate_);//管理v8变量
+		v8::Local<v8::Context> context = isolate_->GetCurrentContext();
+
+
+		v8::Local<v8::Function> func = callback_.Get(isolate_);
+
+		func->Call(context, context->Global(), 0, nullptr);
+	}
+
+	static void Register(js_State* J) {
+		v8::Isolate* isolate = J->isolate();
+		v8pp::class_<PaintHookListener> PaintHookListener_class(isolate);
+		PaintHookListener_class
+			.ctor<const v8::FunctionCallbackInfo<v8::Value>&>()
+			.auto_wrap_objects(true);
+
+		J->class_("PaintHookListener", PaintHookListener_class);
+
+	}
+
+private:
+	v8::Isolate* isolate_;
+	v8::Global<v8::Function> callback_;
+};
+
+
+

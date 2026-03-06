@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\js">
+      <UniqueIdentifier>{3aaa098c-9fb0-4c3e-8f51-c7eb915ccadc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\js">
+      <UniqueIdentifier>{642bcbd6-84de-4a7b-ba38-bbdb7430f2b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\modules">
+      <UniqueIdentifier>{856cde7d-fbe5-4f6a-ac83-dad9971d63bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\utils">
+      <UniqueIdentifier>{a30e3df2-0125-4f55-b335-b2421c414cca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\modules">
+      <UniqueIdentifier>{fe35a857-a1eb-4a4e-97df-5d945c078767}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\utils">
+      <UniqueIdentifier>{9974df39-67d6-4ae4-8d6c-ca3cb67371e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\tests">
+      <UniqueIdentifier>{4de00720-3f63-449c-8e77-af514c4e511b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\tests">
+      <UniqueIdentifier>{519671b6-4e00-45a1-8030-50a0b88e20c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\events">
+      <UniqueIdentifier>{4b9ee07c-e516-451d-a921-4a7341b3c5b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\events">
+      <UniqueIdentifier>{6f254e28-493f-4191-adcf-3aaab5c938e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bug.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="module_loader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="system.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="js_engine.h">
+      <Filter>头文件\js</Filter>
+    </ClInclude>
+    <ClInclude Include="js_global.h">
+      <Filter>头文件\js</Filter>
+    </ClInclude>
+    <ClInclude Include="js_state.h">
+      <Filter>头文件\js</Filter>
+    </ClInclude>
+    <ClInclude Include="js_types.h">
+      <Filter>头文件\js</Filter>
+    </ClInclude>
+    <ClInclude Include="wm_hook.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="debug.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="encoding.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="file.h">
+      <Filter>头文件\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="console.h">
+      <Filter>头文件\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="io.h">
+      <Filter>头文件\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="os.h">
+      <Filter>头文件\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="test_class.h">
+      <Filter>头文件\tests</Filter>
+    </ClInclude>
+    <ClInclude Include="vmthooks.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="animal.h">
+      <Filter>头文件\tests</Filter>
+    </ClInclude>
+    <ClInclude Include="event_base.h">
+      <Filter>头文件\events</Filter>
+    </ClInclude>
+    <ClInclude Include="event_paint.h">
+      <Filter>头文件\events</Filter>
+    </ClInclude>
+    <ClInclude Include="suspender.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="event_tick.h">
+      <Filter>头文件\events</Filter>
+    </ClInclude>
+    <ClInclude Include="timer_wrapper.h">
+      <Filter>头文件\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="test_promise.h">
+      <Filter>头文件\tests</Filter>
+    </ClInclude>
+    <ClInclude Include="js_guard.h">
+      <Filter>头文件\js</Filter>
+    </ClInclude>
+    <ClInclude Include="js_helper.h">
+      <Filter>头文件\js</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bug.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="module_loader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="js_engine.cpp">
+      <Filter>源文件\js</Filter>
+    </ClCompile>
+    <ClCompile Include="js_global.cpp">
+      <Filter>源文件\js</Filter>
+    </ClCompile>
+    <ClCompile Include="js_state.cpp">
+      <Filter>源文件\js</Filter>
+    </ClCompile>
+    <ClCompile Include="wm_hook.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="debug.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="timer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="console.cpp">
+      <Filter>源文件\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="file.cpp">
+      <Filter>源文件\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="io.cpp">
+      <Filter>源文件\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="os.cpp">
+      <Filter>源文件\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="encoding.cpp">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="animal_factory.cpp">
+      <Filter>源文件\tests</Filter>
+    </ClCompile>
+    <ClCompile Include="vmthooks.cpp">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="timer_wrapper.cpp">
+      <Filter>源文件\modules</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

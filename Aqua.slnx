@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Aqua.Core/Aqua.Core.vcxproj" Id="dc4da684-a288-4680-a16d-3d32d93cdf66" />
+</Solution>
